@@ -10,13 +10,24 @@ import java.util.Map;
 /**
  * Helper class for providing sample content for user interfaces created by
  * Android template wizards.
- * <p>
+ * author :Akshay , Sneha
  * TODO: Replace all uses of this class before publishing your app.
  */
 public class HistoryContent {
     public static final List<HistoryItem> ITEMS = new ArrayList<HistoryItem>();
     public static void addItem(HistoryItem item) {
         ITEMS.add(item);
+    }
+    static {
+        DateTime now = DateTime.now();
+        addItem(new HistoryItem("43.12444", "-85.3523", "42.1234", "85.3555",
+                now.minusDays(1)));
+        addItem(new HistoryItem("42.12444", "-77.3523", "42.1234", "85.3555",
+                now.minusDays(1)));
+        addItem(new HistoryItem("43.12444", "-85.3523", "42.1234", "85.3555",
+                now.plusDays(1)));
+        addItem(new HistoryItem("55.12444", "-85.3523", "42.1234", "85.3555",
+                now.plusDays(1)));
     }
     public static class HistoryItem {
         public final String origLat;

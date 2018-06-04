@@ -10,7 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-
+/**
+ * author :Akshay , Sneha
+ */
 public class MySettingsActivity extends AppCompatActivity {
     private String bearingUnits = "degrees";
     private String distanceUnits = "kilometers";

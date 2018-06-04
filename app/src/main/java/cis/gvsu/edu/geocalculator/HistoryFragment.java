@@ -1,7 +1,5 @@
 package cis.gvsu.edu.geocalculator;
-
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
@@ -10,15 +8,24 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+
 import android.view.ViewGroup;
 
 import cis.gvsu.edu.geocalculator.dummy.HistoryContent;
 import cis.gvsu.edu.geocalculator.dummy.HistoryContent.HistoryItem;
-//import cis.gvsu.edu.geocalculator.dummy.HistoryContent.DummyHistory;
+
 
 /**
  * A fragment representing a list of Items.
- *
+ * <p/>
+ * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
+ * interface.
+ */
+
+
+/**
+ * A fragment representing a list of Items.
+ * <p/>
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
@@ -54,9 +61,6 @@ public class HistoryFragment extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
-
-
-
     }
 
     @Override
@@ -74,6 +78,9 @@ public class HistoryFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
             recyclerView.setAdapter(new HistoryAdapter(HistoryContent.ITEMS, mListener));
+            DividerItemDecoration did = new DividerItemDecoration(recyclerView.getContext(),
+                    DividerItemDecoration.VERTICAL);
+            recyclerView.addItemDecoration(did);
         }
         return view;
     }
@@ -101,16 +108,13 @@ public class HistoryFragment extends Fragment {
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
      * activity.
-     *
+     * <p/>
      * See the Android Training lesson <a href=
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-
-
     public interface OnListFragmentInteractionListener {
-    void onListFragmentInteraction(HistoryItem item);
+        // TODO: Update argument type and name
+        void onListFragmentInteraction(HistoryContent.HistoryItem item);
     }
-
 }
-

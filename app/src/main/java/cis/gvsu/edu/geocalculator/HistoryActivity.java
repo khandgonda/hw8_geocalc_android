@@ -19,7 +19,14 @@ public class HistoryActivity extends AppCompatActivity implements HistoryFragmen
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
     }
 
     @Override
@@ -28,7 +35,8 @@ public class HistoryActivity extends AppCompatActivity implements HistoryFragmen
         Intent intent = new Intent();
         String[] vals = {item.origLat, item.origLng, item.destLat, item.destLng};
         intent.putExtra("item", vals);
-        setResult(MainActivity.HISTORY_RESULT, intent);
+        setResult(MainActivity.HISTORY_RESULT,intent);
         finish();
     }
+
 }

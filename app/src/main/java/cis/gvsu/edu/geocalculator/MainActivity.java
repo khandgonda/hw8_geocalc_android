@@ -22,6 +22,9 @@ import net.danlew.android.joda.JodaTimeAndroid;
 import org.joda.time.DateTime;
 
 import cis.gvsu.edu.geocalculator.dummy.HistoryContent;
+/**
+ * author :Akshay , Sneha
+*/
 
 public class MainActivity extends AppCompatActivity {
     public static int HISTORY_RESULT = 2;
@@ -81,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
         calcButton.setOnClickListener(v -> {
             HistoryContent.HistoryItem item = new
-                    HistoryContent.HistoryItem(p1Lat.toString(),
-                    p1Lng.toString(), p2Lat.toString(), p2Lng.toString(), DateTime.now());
+                    HistoryContent.HistoryItem(p1Lat.getText().toString(),
+                    p1Lng.getText().toString(), p2Lat.getText().toString(), p2Lng.getText().toString(), DateTime.now());
             HistoryContent.addItem(item);
             updateScreen();
         });
